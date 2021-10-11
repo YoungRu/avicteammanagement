@@ -18,9 +18,6 @@
     #todo_image img{
     width: 80%;
     }
-    #work{
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
-    }
     #description{
      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     }
@@ -41,8 +38,8 @@
 {% block content %}
     <div class="container">
         <div class="text-center" id="detail_body">
-            <h2 id="work">{{ todo.Work|capfirst }}</h2>
-            <br>
+            <h2 id="work"> <strong> {{ todo.Work|capfirst }} </strong></h2>
+            <hr>
             {% if todo.WorkDone %}
                 <h5 class="inline-block"> <mark class="light_green">Work Done: Yes |</mark></h5>
             {% else %}
@@ -55,7 +52,7 @@
             {% endif %}
             <br>
             <div id="description">
-                <h3> {{ todo.Description }} </h3>
+                <h2> {{ todo.Description }} </h2>
                 <br>
                 {% if todo.File %}
                     <div class="container" id="todo_image">
@@ -66,15 +63,15 @@
             </div>
                 <br>
             <hr>
-            <h4 class="text-left"> <strong> Assign to: </strong></h4>
+            <h3 class="text-left"> <strong> Assign to: </strong></h3>
                 {% if todo.Assign is not None %}
                     {% if todo.Assign.all|length > 1 %}
                         {% for user in todo.Assign.all %}
-                            <h4> {{user}} |</h4>
+                            <h3> {{user}} |</h3>
                         {% endfor %}
                     {% else %}
                         {% for user in todo.Assign.all %}
-                            <h4> {{user}}</h4>
+                            <h3> {{user}}</h3>
                         {% endfor %}
                     {% endif %}
                 {% else %}

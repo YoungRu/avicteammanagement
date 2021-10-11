@@ -1,6 +1,12 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 <script src="https://kit.fontawesome.com/da288a76e0.js" crossorigin="anonymous"></script>
 <style>
+  body{
+      background-image: url("https://images.unsplash.com/photo-1503435980610-a51f3ddfee50?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8&w=1000&q=80");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 0 -10%;
+      }
   a{
   margin-right: 10px;
   margin-left: 10px;
@@ -11,13 +17,39 @@
   #logo{
   margin: 0 0 0 0;
   }
+  #logout{
+  margin-top: 12%;
+  margin-right: 20%;
+  color:black;
+  }
+  .marginal{
+  margin-left:20%;
+  }
+  #nav{
+  background: white;
+  background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUTEhIVFRUXFRUXFRcVFRUVFRcVFRUXFxUXFxUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFxAQFy0dHR0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIAK4BIgMBIgACEQEDEQH/xAAZAAEBAQEBAQAAAAAAAAAAAAABAgADBAf/xAAnEAEBAQEAAQMDAwUBAAAAAAAAAQIRIQMSQTFRgWFx8BORscHh0f/EABgBAQEBAQEAAAAAAAAAAAAAAAEAAgME/8QAGhEBAQEBAQEBAAAAAAAAAAAAAAERIQIxEv/aAAwDAQACEQMRAD8A+sWcP4jTPXSZcnvtSxETKKZPI6qRNJ0JVaTQYarg4SESusrnfB9yV665+qd4Tb58DfamZOrz9h2BkcOsxGJ5VaYkNNK3VXKTXiWmJ93XMk8oW43HO48vVi9ctZ4cYnpxzOGnWWgb1sqmkxU4hWqN5VK18xKJzPBx+wmuN7kXTNnHTLjVefuWbFXIXP7tYWdR2ssha82V6S2tB0ozfijf14YJOojOTTlFRNgsVPonSUMqs455bHPhfPhM2o9ROIqtMo7wVoqU3SCMq3+zen5P9P7JW9RwdrrPSvjy56x+qMsQvNTM9N0jWtdc3w5HMQrt6el+t93OOn17z+fzrTlfup1P0Rx26558z8gyudjcVfswa0Dp1GmUUaZdjTKWjN8fleNDWfCPTs6R9j1xqjNNLngIZF5uNzwbBxl1aTjSE8SMyjnXTqNXiETq8gkVgzM6juH08fz/AEmTyfnn/hk8fTz/ALQa/j+7DOefWuk+iFomPk+39F5Vg4zfTz6nPPyMXz5v1Pq/nvU7v8/wG51274/n5Zy3bfkyfkjFaiL6fnrompStcxva6SHdQ1y96c+pZVXJmZ+UeLmvqjHVCpkrmXPUXKRRD7fAyrMSqLlWfom6+PmKSGp4cNeK69c7O+RW/PHSVd0h0zEzR7oyvbGI44t1Gb4a1l0wwWjNZHDNp9TQaxGQ5pqcqylVZzHXkc5XSbMc/WiY+WzlRLOtKf8AIkaziCbnrlrPl3k+qPUn/OBqVy5/Yenf+L78C/eUN6qXwrNkTYfqWVWd8dRPDScq4h8RdefpTbz91WCZv3S0a0emwTKXAqfu2Y1n8+yWtaN7+yKJqrTIOd/f7rnj5bGV+1G1y71UivYeIaIvo4ZCzUM7Mh+nmxj4Tfr/AD5d4n1MDG56654xxrF5azz4R3rnxGuvRxOvPPyMM9OUivadUyJaOOnpxs5XJz6GM2mZazye/J+C5sLPK4P3I1PHP1dc/s7bcvUk+fgVrzXDV+BjJPb9Iy6utvj8tIifR079Cw0h9rYdCzaj2tnK9XjUjUaTdOlibAYlNjrBrCOuVEnlesogajpIqJXSxU2tAqIt7W4elMsx4xDjPgynU8CUNqufImVSlM6hOsuvOp3EZXn1PLr6UMw6ZysN9cGY1iuGwsag/hrj7iIq7wxFbVQx0sefVOtfdy1votb8+Vc8pbvGlDaplffLZbRYVKMpKWGLqOI9TXEM11HuR/VPu/RLF+6N1zm29y1flW6mQVcR+CRUDSIFiZEhIrjSEsnjI6yWNqJhsagimaHB1FfaI3uOaQ3FRLdQVTImVuoFPP0NrdREo1PCrxy0jHP1ddTIuxpll03iZOrzDIULS1MgpZbrQyNEhft8udzXaCRKVxuvuqfZ01n9EWJrdTIW1OJB+uhlQxGLUiVUTNKkcVCKY1ZogeMzJC1uGXo6kNphpiKbGigEYwmmhSq0HTUGsHFHU8eENctVHW9S9TgOknFcPsPTEtHDKzcQIIiTHiYYkYbGaUgDVXIgKJsb2q9p9qOuftHPsts+Edc4qVVqIC6RcrnJTKWbFlMawsqYcZJkskGRVre5KkT0Wp6pAZpbhiQXmiQ8IrXwLfsbBYg5WeRYeNA6NITIyDcHFVkmbjVRCIaZB7fKRCuDiTSpihxJpW01KSKSwKcq40KFNiNRVoKiZavqaAV9De79QQpFPE2gw1pDWiQp63DIk0MaRUhZplLcaRMt7UOlRqIxy3kOlyjgblMIjRJbWNCWU8aERJrW6LDmfZFXAZRYg2jYIUkaBooJZo3SmiolXppUUMakKxCTcB4AVo46cTwiVJqpBrKWpMqSC6Q8TmuhYrSNazcIHG0UxIyDWerjT6Ja4XI9rrco4GpQqJZFTQ5biZSL4XUoxujqdeFZBMMEYgaDaAaMLQwphKWiCsTw1yfTnhXymNchHXUc6mpdYFkX/9k=");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: 5%;
+  opacity: 0.85;
+  }
+  h2{
+  font-size: 300%;
+
+  }
+  h3{
+  font-size: 200%;
+  }
+  h5{
+  font-size: 150%;
+  }
 </style>
 {% if user.is_authenticated %}
-<div class="container" id="nav">
+<div class="container-fluid" id="nav">
   <div class="row">
-    <div class="col-xs-4 col-md-4 text-left"> <h2>Welcome,</h2> <h5> {{ user.userreg|capfirst }}</h5></div>
+    <div class="col-xs-4 col-md-4 text-left"> <h2 class="marginal">Welcome,</h2> <h5 class="marginal"> {{ user.userreg|capfirst }}</h5></div>
     <div class="col-xs-4 col-md-4 text-center"><a href="{% url 'managementapp:index' %}"> <h3 id="logo"> 旋切部 <img src="https://uxwing.com/wp-content/themes/uxwing/download/23-nature-and-environment/forest.png"></h3> </a> </div>
-    <div class="col-xs-4 col-md-4 text-right"> <a href="{% url 'managementapp:signout' %}"> <h3> Signout </h3> </a></div>
+    <div class="col-xs-4 col-md-4 text-right"> <a href="{% url 'managementapp:signout' %}"> <h3 id="logout"> Signout </h3> </a></div>
   </div>
 </div>
 {% else %}

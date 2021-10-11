@@ -9,26 +9,29 @@
 {% extends 'todo/base.html' %}
 {% block content %}
 <style>
-    body{
-    background-image: url("https://cdn.pixabay.com/photo/2015/03/19/22/31/trees-681483_1280.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    }
     ul{
     list-style-type: none;
+    }
+    h1{
+    font-size: 500%;
     }
     .icon{
     position:fixed;
     left:90%;
     top:90%;
     border-radius: 30%;
-    background-color: rgba(255, 255, 255, 0.30);
+    background-color: rgba(255, 255, 255, 0.70);
     box-shadow: rgba(0, 0, 0, 1) 0px 2px 4px;
-    font-size: 320%;
+    font-size: 400%;
     }
     #theme{
     box-shadow: rgba(0, 0, 0, 1) 0px 22px 70px 4px;
     background-color: rgba(255, 255, 255, 0.80);
+    margin-bottom: 5%;
+    }
+    h2{
+    font-size: 300%;
+    color:blue;
     }
     .fas{
     margin-top: 15%;
@@ -38,7 +41,8 @@
     }
     #notodoinner{
     position: relative;
-    top:50%;
+    top:45%;
+    font-size: 300%;
     }
     #work{
     display: inline-block;
@@ -76,11 +80,11 @@
     background-color: rgba(255, 255, 255, 0.80);
     }
     #create{
-    font-size: 120%;
+    font-size: 250%;
     }
     .button{
     margin: 15% 0 0 0;
-    padding: 0 0 0 20%;
+    padding: 0 0 0 35%;
     }
     .kebabcontainer {
     position: relative;
@@ -116,7 +120,7 @@
 
 <div class="container-fluid text-center" >
     <div class="col-sm-4 col-lg-4" ></div>
-    <div class="col-sm-4 col-lg-4" id="theme">
+    <div class="col-sm-12 col-lg-12" id="theme">
         <h1> Today's Todo List </h1>
     </div>
     <div class="col-sm-4 col-lg-4"></div>
