@@ -1,2 +1,2 @@
-web: guinicorn TeamManagement.wsgi
+web: gunicorn TeamManagement.wsgi
 
