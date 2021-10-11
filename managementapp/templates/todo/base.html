@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/da288a76e0.js" crossorigin="anonymous"></script>
+<style>
+  a{
+  margin-right: 10px;
+  margin-left: 10px;
+  }
+  #logo img{
+  height: 10vh;
+  }
+  #logo{
+  margin: 0 0 0 0;
+  }
+</style>
+{% if user.is_authenticated %}
+<div class="container" id="nav">
+  <div class="row">
+    <div class="col-xs-4 col-md-4 text-left"> <h2>Welcome,</h2> <h5> {{ user.userreg|capfirst }}</h5></div>
+    <div class="col-xs-4 col-md-4 text-center"><a href="{% url 'managementapp:index' %}"> <h3 id="logo"> 旋切部 <img src="https://uxwing.com/wp-content/themes/uxwing/download/23-nature-and-environment/forest.png"></h3> </a> </div>
+    <div class="col-xs-4 col-md-4 text-right"> <a href="{% url 'managementapp:signout' %}"> <h3> Signout </h3> </a></div>
+  </div>
+</div>
+{% else %}
+<div class="row">
+  <div class="col-xs-4 col-md-4 text-center"> </div>
+  <div class="col-xs-4 col-md-4 text-center"> <h2>Welcome,</h2><h5>you are not logged in</h5> </div>
+  <div class="col-xs-4 col-md-4 text-center"> <a href="{% url 'managementapp:signin' %}"> <h3> Login </h3></a></div>
+</div>
+{% endif %}
+{% block content %}
+{% endblock %}

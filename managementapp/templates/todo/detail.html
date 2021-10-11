@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+</head>
+<body>
+<style>
+    form{
+    display: inline-block;
+    }
+    a{
+    text-decoration: none;
+    }
+    #todo_image{
+    height: 80%;
+    }
+    #todo_image img{
+    width: 80%;
+    }
+    #work{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+    #description{
+     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    }
+    #back_button, form{
+    font-size: 200%;
+    }
+    .inline-block{
+    display: inline-block;
+    }
+    .light_green{
+    background-color: rgba(10, 255, 78, 0.36);
+    }
+    .red{
+    background-color: rgba(255, 20, 0, 0.36);
+    }
+</style>
+{% extends 'todo/base.html' %}
+{% block content %}
+    <div class="container">
+        <div class="text-center" id="detail_body">
+            <h2 id="work">{{ todo.Work|capfirst }}</h2>
+            <br>
+            {% if todo.WorkDone %}
+                <h5 class="inline-block"> <mark class="light_green">Work Done: Yes |</mark></h5>
+            {% else %}
+                <h5 class="inline-block"><mark class="red">Work Done: No |</mark></h5>
+            {% endif %}
+            {% if todo.Checked %}
+                <h5 class="inline-block"><mark class="light_green">Has been checked</mark></h5>
+            {% else %}
+                 <h5 class="inline-block"><mark class="red">Checked: No</mark></h5>
+            {% endif %}
+            <br>
+            <div id="description">
+                <h3> {{ todo.Description }} </h3>
+                <br>
+                {% if todo.File %}
+                    <div class="container" id="todo_image">
+                        <img src="{{ todo.File.url }}" alt="{{ todo.File }}" height="100%">
+                    </div>
+                {% else %}
+                {% endif %}
+            </div>
+                <br>
+            <hr>
+            <h4 class="text-left"> <strong> Assign to: </strong></h4>
+                {% if todo.Assign is not None %}
+                    {% if todo.Assign.all|length > 1 %}
+                        {% for user in todo.Assign.all %}
+                            <h4> {{user}} |</h4>
+                        {% endfor %}
+                    {% else %}
+                        {% for user in todo.Assign.all %}
+                            <h4> {{user}}</h4>
+                        {% endfor %}
+                    {% endif %}
+                {% else %}
+                    not assigned
+                {% endif %}
+            <hr>
+
+            <div class="col-sm-6 col-lg-6">
+                <a href="{% url 'managementapp:index' %}"><button id="back_button">back</button></a>
+            </div>
+            <div class="col-sm-6 col-lg-6">
+                {% if user.userreg.Position == 'Worker' %}
+                {% else %}
+                    <form method="POST" action="{% url 'managementapp:checked' todo.id%}">
+                        {% csrf_token %}
+                        <input type="submit" value="Checked">
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+</body>
+</html>
